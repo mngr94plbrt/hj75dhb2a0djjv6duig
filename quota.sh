@@ -1,3 +1,5 @@
+rm "data.txt"
+touch "data.txt"
 aws configure set region us-east-1
 QUOTA=$(aws service-quotas get-service-quota --service-code ec2 --quota-code L-1216C47A --query 'Quota.Value')
 if [[ $QUOTA != 5.0 ]]; then
