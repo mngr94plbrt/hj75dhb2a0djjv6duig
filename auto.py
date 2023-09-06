@@ -10,7 +10,9 @@ with open('data.txt', 'r') as file:
     for line in file:
         x = line.split(" == ")
         region = x[1]
-        limit_tmp = int(x[0])
+        limit_tmp = x[0]
+        limit_tmp = limit_tmp[:-2]
+        limit_tmp = int(limit_tmp)
         if limit_tmp > 5:
             limit = limit_tmp
             dump.append(str(region))
